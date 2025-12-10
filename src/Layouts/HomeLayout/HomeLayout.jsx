@@ -1,6 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router";
 import Header from "../../Components/Header/Header";
+import LatestNews from "../../Components/LatestNews/LatestNews";
 
 const HomeLayout = () => {
   return (
@@ -9,6 +10,9 @@ const HomeLayout = () => {
       <header>
         {" "}
         <Header></Header>
+        <section className="w-11/12 mx-auto">
+          <LatestNews></LatestNews>
+        </section>
       </header>
       {/* this is main section9o of app */}
       <main>
