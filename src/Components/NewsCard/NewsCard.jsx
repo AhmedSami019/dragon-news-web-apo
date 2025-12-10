@@ -19,7 +19,7 @@ export default function NewsCard({ news }) {
       
       {/* Author section */}
       <div className="flex justify-between items-center">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 ">
           <img
             src={author.img}
             alt={author.name}
