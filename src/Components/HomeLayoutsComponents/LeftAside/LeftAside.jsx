@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Suspense } from "react";
+import Categories from "../../Categories/Categories";
 
 const LeftAside = () => {
-    return (
-        <div>
-            <h2>left aside</h2>
-        </div>
-    );
+  return (
+    <div>
+      <Suspense fallback={<span className="loading loading-bars loading-md"></span>}>
+        <Categories />
+      </Suspense>
+    </div>
+  );
 };
 
 export default LeftAside;
