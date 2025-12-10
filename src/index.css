@@ -17,7 +17,7 @@
 * {
   font-family: "Poppins", sans-serif;
 }
-a.active{
+a.active {
   @apply bg-base-300
- text-black
+ text-black;
 }
