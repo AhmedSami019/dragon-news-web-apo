@@ -1,17 +1,17 @@
 import React, { use } from 'react';
 import { NavLink } from 'react-router';
-const categoriesPromise = fetch("categories.json").then(res => res.json())
+const categoriesPromise = fetch("/categories.json").then(res => res.json())
 
 const Categories = () => {
-    const categories = use(categoriesPromise)
-    categories.map(cat => console.log(cat))
+     const categories = use(categoriesPromise)
+
     return (
         <div>
-            <h2 className='text-lg font-semibold'>All Categories</h2>
-            <div className='flex flex-col mt-5 text-lg font-medium gap-2'>
-            {
-                categories.map(category => <NavLink className={" p-3 bg-base-300"} key={category.id}>{category.name}</NavLink>)
-            }
+            <h2 className='text-lg font-semibold'>Al Categories</h2>
+            <div className='grid grid-cols-1 gap-1 mt-5'>
+                {
+                 categories.map(category => <NavLink key={category.id} to={`category/${category.id}`} className="p-2 bg-base-100 text-lg text-center text-gray-500 font-medium">{category.name}</NavLink>) 
+                }
             </div>
         </div>
     );

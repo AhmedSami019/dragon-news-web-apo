@@ -21,6 +21,7 @@ const HomeLayout = () => {
           <Navbar></Navbar>
         </nav>
       </header>
+      
       {/* this is main section9o of app */}
       <main className="w-11/12 mx-auto my-4 grid grid-cols-12 gap-5 ">
         <aside className="col-span-3">
