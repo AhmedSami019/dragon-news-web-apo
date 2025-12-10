@@ -8,18 +8,15 @@ const LatestNews = () => {
       <Marquee className="flex gap-10">
         <p className="text-lg font-medium">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, id.
-          A, numquam reprehenderit. Architecto dolorum sapiente ea adipisci
-          sequi eveniet.
+          A, numquam reprehenderit.
         </p>
         <p className="text-lg font-medium">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, id.
-          A, numquam reprehenderit. Architecto dolorum sapiente ea adipisci
-          sequi eveniet.
+          A, numquam reprehenderit.
         </p>
         <p className="text-lg font-medium">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, id.
-          A, numquam reprehenderit. Architecto dolorum sapiente ea adipisci
-          sequi eveniet.
+          A, numquam reprehenderit.
         </p>
       </Marquee>
     </div>
