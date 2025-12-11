@@ -4,6 +4,9 @@ import About from "../../Pages/Root/About/About";
 import Career from "../../Pages/Career/Career";
 import Home from "../../Components/Home/Home";
 import CategoryNews from "../../Pages/CategoryNews/CategoryNews";
+import AuthLayout from "../../Components/AuthLayout/AuthLayout";
+import Login from "../../Pages/Login/Login";
+import Register from "../../Pages/Register/Register";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +21,20 @@ const router = createBrowserRouter([
                 path: "category/:id",
                 Component: CategoryNews,
                 loader: ()=> fetch("/news.json")
+            }
+        ]
+    },
+    {
+        path: "auth",
+        Component: AuthLayout,
+        children: [
+            {
+                path: "/auth/login",
+                Component: Login
+            },
+            {
+                path: "/auth/register",
+                Component: Register
             }
         ]
     },
