@@ -28,7 +28,12 @@ const router = createBrowserRouter([
     {
         path: "career",
         Component: Career
+    },
+    {
+        path: "/*",
+        element: <h2 className="text-2xl font-semibold text-center mt-20">404 error</h2>
     }
+    
 ])
 
 export default router
