@@ -28,7 +28,7 @@ const Register = () => {
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
-            <button className="btn btn-neutral mt-4">Login</button>
+            <button className="btn btn-neutral mt-4">Register</button>
           </fieldset>
           <p className="text-center font-medium mt-5">
             Already Have An Account ?{" "}
