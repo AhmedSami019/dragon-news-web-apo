@@ -31,9 +31,9 @@ const Register = () => {
             <button className="btn btn-neutral mt-4">Login</button>
           </fieldset>
           <p className="text-center font-medium mt-5">
-            Don’t Have An Account ?{" "}
-            <Link to="/auth/register" className="text-secondary underline">
-              Register
+            Already Have An Account ?{" "}
+            <Link to="/auth/login" className="text-secondary underline">
+              Login
             </Link>
           </p>
         </div>
