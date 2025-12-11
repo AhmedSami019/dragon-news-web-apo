@@ -25,9 +25,6 @@ const Register = () => {
             {/* password */}
             <label className="label">Password</label>
             <input type="password" className="input" placeholder="Password" />
-            <div>
-              <a className="link link-hover">Forgot password?</a>
-            </div>
             <button className="btn btn-neutral mt-4">Register</button>
           </fieldset>
           <p className="text-center font-medium mt-5">
