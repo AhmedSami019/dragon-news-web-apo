@@ -2,21 +2,13 @@ import { FaBookmark, FaShareAlt, FaStar, FaEye } from "react-icons/fa";
 import { format } from "date-fns";
 
 export default function NewsCard({ news }) {
-  const {
-    title,
-    author,
-    thumbnail_url,
-    details,
-    rating,
-    total_view,
-  } = news;
+  const { title, author, thumbnail_url, details, rating, total_view } = news;
 
-    // Format date
+  // Format date
   const published = format(new Date(author.published_date), "yyyy-MM-dd");
 
   return (
     <div className="bg-white shadow rounded-lg p-6 space-y-4">
-      
       {/* Author section */}
       <div className="flex justify-between items-center">
         <div className="flex items-center gap-3 ">
@@ -38,9 +30,7 @@ export default function NewsCard({ news }) {
       </div>
 
       {/* Title */}
-      <h2 className="text-xl font-bold leading-snug">
-        {title}
-      </h2>
+      <h2 className="text-xl font-bold leading-snug">{title}</h2>
 
       {/* Image */}
       <img
@@ -61,14 +51,10 @@ export default function NewsCard({ news }) {
       {/* Rating + views */}
       <div className="flex items-center justify-between pt-4 border-t">
         <div className="flex items-center text-orange-500 text-xl gap-1">
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar />
-          <FaStar className="text-gray-300" />
-          <span className="ml-2 text-gray-700 text-base">
-            {rating.number}
-          </span>
+          {Array.from({ length: rating.number }).map((i) => (
+            <FaStar key={i} />
+          ))}
+          <span className="ml-2 text-gray-700 text-base">{rating.number}</span>
         </div>
 
         <div className="flex items-center gap-2 text-gray-600">
