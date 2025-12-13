@@ -25,10 +25,9 @@ const CategoryNews = () => {
     filterNews();
   }, [id, data]);
 
-  console.log(newsData);
   return (
     <div>
-      <div className="grid grid-cols-1 gap-5">
+      <div className="grid grid-cols-1 gap-5?F">
         {
             newsData.map(news => <NewsCard key={news.id} news={news}></NewsCard>)
         }
