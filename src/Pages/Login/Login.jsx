@@ -1,8 +1,29 @@
-import React from "react";
+import React, { use } from "react";
 import { Link } from "react-router";
+import AuthContext from "../../Providers/AuthProvider/AuthContext";
 
 const Login = () => {
 
+  // import the signIn function
+  const {singInUser} = use(AuthContext)
+
+  // sign handler
+  const handleSignUser = (e)=>{
+    e.preventDefault()
+    const form = e.target
+    const email = form.email.value
+    const password = form.password.value
+    console.log(email, password);
+
+    // call the signIn function
+    singInUser(email, password)
+    .then(result =>{
+      console.log(result);
+      alert("user logged in successfully")
+    }).catch(error => {
+      console.log(error.code);
+    })
+  }
   
   return (
     <div className="flex justify-center items-center min-h-screen w-6/12">
@@ -11,16 +32,18 @@ const Login = () => {
           Login your account{" "}
         </h2>
         <div className="card-body">
-          <fieldset className="fieldset">
+          <form onSubmit={handleSignUser} className="fieldset">
+            {/* email */}
             <label className="label">Email</label>
-            <input type="email" className="input" placeholder="Email" />
+            <input type="email" name="email" className="input" placeholder="Email" />
+            {/* password */}
             <label className="label">Password</label>
-            <input type="password" className="input" placeholder="Password" />
+            <input type="password" name="password" className="input" placeholder="Password" />
             <div>
               <a className="link link-hover">Forgot password?</a>
             </div>
-            <button className="btn btn-neutral mt-4">Login</button>
-          </fieldset>
+            <button type="submit" className="btn btn-neutral mt-4">Login</button>
+          </form>
           <p className="text-center font-medium mt-5">Don’t Have An Account ? <Link to="/auth/register" className="text-secondary underline">Register</Link></p>
         </div>
       </div>
