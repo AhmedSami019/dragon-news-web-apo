@@ -9,7 +9,7 @@ const NewsDetails = () => {
   const {id} = useParams();
   // add a state for news
   const [news, setNews] = useState({});
-  console.log(newsData, id);
+
 
   useEffect(() => {
     const fetchNewsDetails = async () => {
@@ -19,7 +19,7 @@ const NewsDetails = () => {
 
     fetchNewsDetails();
   }, [newsData, id]);
-  console.log(news);
+
 
   // console.log(news);
   return (
@@ -30,7 +30,7 @@ const NewsDetails = () => {
       <main className="w-11/12 mx-auto my-10 grid grid-cols-12 gap-5">
         <section className="col-span-9">
           <h2 className="text-xl font-medium">Dragon News</h2>
-          <NewsDetailsCArd></NewsDetailsCArd>
+          <NewsDetailsCArd news={news}></NewsDetailsCArd>
         </section>
         <aside className="col-span-3">
           <RightAside></RightAside>
