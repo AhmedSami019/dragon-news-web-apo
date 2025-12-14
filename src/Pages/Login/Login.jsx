@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router";
 
 const Login = () => {
+
+  
   return (
     <div className="flex justify-center items-center min-h-screen w-6/12">
       <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
