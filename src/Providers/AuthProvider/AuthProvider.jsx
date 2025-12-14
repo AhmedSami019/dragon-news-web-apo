@@ -26,6 +26,8 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
+  console.log(user);
+
   //   const user = { name: "sami", email: "sami@jami.com" };
   const authData = {
     user,

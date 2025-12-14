@@ -14,6 +14,8 @@ const Register = () => {
     const password = e.target.password.value;
 
     console.log({ name, photo, email, password });
+
+    // call of register user
     registerUSer(email, password)
       .then((result) => {
         const newUser = result.user;
@@ -22,7 +24,7 @@ const Register = () => {
       })
       .catch((error) => {
         const errorCode = error.code;
-        console.log(errorCode);
+        alert(errorCode);
       });
   };
 
