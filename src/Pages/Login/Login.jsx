@@ -1,14 +1,17 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import AuthContext from "../../Providers/AuthProvider/AuthContext";
 
 const Login = () => {
+
+  const navigate = useNavigate()
 
   // import the signIn function
   const {singInUser} = use(AuthContext)
 
   // sign handler
   const handleSignUser = (e)=>{
+
     e.preventDefault()
     const form = e.target
     const email = form.email.value
@@ -20,6 +23,7 @@ const Login = () => {
     .then(result =>{
       console.log(result);
       alert("user logged in successfully")
+      navigate("/")
     }).catch(error => {
       console.log(error.code);
     })
