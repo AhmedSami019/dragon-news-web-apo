@@ -12,28 +12,29 @@ import {
 const AuthProvider = ({ children }) => {
   const auth = getAuth(app);
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
 
   const registerUSer = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // for sing in user with email and password
-  const singInUser = (email, password)=>{
-    return signInWithEmailAndPassword(auth, email, password)
-  }
+  const singInUser = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   // for log out
-  const logOut = ()=>{
-    return signOut(auth)
-  }
+  const logOut = () => {
+    return signOut(auth);
+  };
 
-
-//   to make sure is user logged in or not
+  //   to make sure is user logged in or not
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      setLoading(false)
+      setLoading(false);
     });
     return () => {
       unSubscribe();
@@ -50,7 +51,7 @@ const AuthProvider = ({ children }) => {
     singInUser,
     logOut,
     loading,
-    setLoading
+    setLoading,
   };
   return <AuthContext value={authData}>{children}</AuthContext>;
 };
