@@ -6,20 +6,19 @@ import { useLoaderData, useParams } from "react-router";
 
 const NewsDetails = () => {
   const newsData = useLoaderData();
-  const {id} = useParams();
+  const { id } = useParams();
   // add a state for news
   const [news, setNews] = useState({});
-
 
   useEffect(() => {
     const fetchNewsDetails = async () => {
       const newsDetails = newsData.find((singleNews) => singleNews.id == id);
       setNews(newsDetails);
+      window.scroll(0, 0);
     };
 
     fetchNewsDetails();
   }, [newsData, id]);
-
 
   // console.log(news);
   return (
