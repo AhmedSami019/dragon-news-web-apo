@@ -7,7 +7,6 @@ const CategoryNews = () => {
   const data = useLoaderData();
   const [newsData, setNewsData] = useState([]);
 
-
   useEffect(() => {
     async function filterNews() {
       if (id === "0") {
@@ -28,9 +27,13 @@ const CategoryNews = () => {
   return (
     <div>
       <div className="grid grid-cols-1 gap-5?F">
-        {
-            newsData.map(news => <NewsCard key={news.id} news={news}></NewsCard>)
-        }
+        {newsData.length == 0 ? (
+          <h2 className="text-center mt-20 text-2xl font-bold">Oooops! <br /> there is no news</h2>
+        ) : (
+          newsData.map((news) => (
+            <NewsCard key={news.id} news={news}></NewsCard>
+          ))
+        )}
       </div>
     </div>
   );
