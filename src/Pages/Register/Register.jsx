@@ -3,7 +3,7 @@ import { Link } from "react-router";
 import AuthContext from "../../Providers/AuthProvider/AuthContext";
 
 const Register = () => {
-  const { registerUSer, setUser } = use(AuthContext);
+  const { registerUSer, setUser, updateUserProfile } = use(AuthContext);
 
   // register handle function
   const handleRegister = (e) => {
@@ -20,7 +20,13 @@ const Register = () => {
       .then((result) => {
         const newUser = result.user;
         console.log(newUser);
-        setUser(newUser);
+        updateUserProfile({ displayName: name, photoURL: photo })
+          .then(() => {
+            setUser({ ...newUser, displayName: name, photoURL: photo });
+          })
+          .catch((error) => {
+            console.log(error.code);
+          });
       })
       .catch((error) => {
         const errorCode = error.code;
