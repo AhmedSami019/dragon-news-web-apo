@@ -1,9 +1,10 @@
 import React, { use } from "react";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import AuthContext from "../../Providers/AuthProvider/AuthContext";
 
 const Register = () => {
   const { registerUSer, setUser, updateUserProfile } = use(AuthContext);
+  const navigate = useNavigate()
 
   // register handle function
   const handleRegister = (e) => {
@@ -23,6 +24,7 @@ const Register = () => {
         updateUserProfile({ displayName: name, photoURL: photo })
           .then(() => {
             setUser({ ...newUser, displayName: name, photoURL: photo });
+            navigate("/")
           })
           .catch((error) => {
             console.log(error.code);
